@@ -1,8 +1,6 @@
-# Shantanu Jhaveri, sj06434@usc.edu
-# ITP 115, Spring 2020
-# Assignment 4
 # Description:
-# this part of the code just notes what letters are being used in the sentence without using any functions. It only uses for loops
+# this part of the code just notes what letters are being used in the sentence without using any functions.
+# It only uses for loops. Things such as functions, count(), and find () were not allowed
 
 print("PART 1 - Character Counter")
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
