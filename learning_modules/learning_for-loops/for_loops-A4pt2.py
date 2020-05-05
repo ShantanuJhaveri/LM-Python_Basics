@@ -1,5 +1,8 @@
 # Description:
-# this second part of the code
+# This second part of the code. It is made to emulate a D20, but only with range-based for loops.
+# The assignment was to print out the winning numbers but with the for-loop only to demonstrate understanding
+# Things such as functions, count(), and find () were not allowed
+
 import random
 
 # winning cases:
