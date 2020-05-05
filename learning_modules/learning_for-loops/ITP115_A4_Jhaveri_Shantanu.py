@@ -6,17 +6,26 @@
 
 print("PART 1 - Character Counter")
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
-character = input("Please enter a sentence:")
+input = input("Please enter a sentence:")
+character = input.lower()
 print("Here is the character distribution:")
-count = 0
-special = 0
 
-for letter in alphabet:
-    print(letter + ": ", end="")
+for i in alphabet:
+    print(i + ": ", end="")
     count = 0
-    for a in character:
-        if a == letter:
-            print("*")
-            count += 1
-        else:
-            print(" ")
+    if i in character:
+        for a in i:
+            print("*", end="")
+        # for a in character:
+        #     print("*", end="")
+        print("")
+    else:
+        print("NONE")
+
+print("special characters: ", end='')
+for i in character:
+    if i.isalpha() != True and i != ' ':
+        print("*", end='')
+
+
+
