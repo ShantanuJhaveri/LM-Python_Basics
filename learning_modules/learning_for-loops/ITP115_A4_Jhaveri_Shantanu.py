@@ -10,17 +10,29 @@ input = input("Please enter a sentence:")
 character = input.lower()
 print("Here is the character distribution:")
 
+# for i in alphabet:
+#     print(i + ": ", end="")
+#     count = 0
+#     if i in character:
+#         for a in i:
+#             print("*", end="")
+#         # for a in character:
+#         #     print("*", end="")
+#         print("")
+#     else:
+#         print("NONE")
+
 for i in alphabet:
     print(i + ": ", end="")
     count = 0
-    if i in character:
-        for a in i:
+    for a in i:
+        if i in character:
             print("*", end="")
         # for a in character:
         #     print("*", end="")
-        print("")
-    else:
-        print("NONE")
+            print("")
+        else:
+            print("NONE")
 
 print("special characters: ", end='')
 for i in character:
