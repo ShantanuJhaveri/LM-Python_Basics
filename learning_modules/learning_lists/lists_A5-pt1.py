@@ -26,7 +26,7 @@ for i in wordList:
 #     selectedWord_Mutable.append(jumbleWord_2)
 #
 # print(selectedWord_Mutable)
-#
+
 choice = random.choice(jumbleList)
 choiceIndex = jumbleList.index(choice)
 correct = wordList[choiceIndex].lower().strip()
