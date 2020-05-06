@@ -15,23 +15,25 @@ encrypt = ''
 decrypt = ''
 
 for i in msg:
-    index = int(alpha.index(i))
-    # print(index)
-    i = cypher[index]
-    # print(i)
+    if i.isalpha():
+        index = int(alpha.index(i))
+        # print(index)
+        i = cypher[index]
+        # print(i)
     encrypt += i
 
-print("\nENCRYPTING MESSAGE...\n\tENCRYPTED MESSAGE: " + str(encrypt))
+print("\nENCRYPTING MESSAGE...\n\tENCRYPTED MESSAGE:\t" + str(encrypt))
 list(encrypt)
 
 for i in encrypt:
-    index = int(cypher.index(i))
-    i = alpha[index]
+    if i.isalpha():
+        index = int(cypher.index(i))
+        i = alpha[index]
     decrypt += i
 
-print("\nDECRYPTING MESSAGE...\n\tDECRYPTED MESSAGE: " + str(decrypt) + "\n\tORIGINAL MESSAGE: " + ''.join(msg))
+print("\nDECRYPTING MESSAGE...\n\tDECRYPTED MESSAGE:\t" + str(decrypt) + "\n\tORIGINAL MESSAGE:\t" + ''.join(msg))
 
-if decrypt == msg:
+if decrypt == ''.join(msg):
     print("DECRYPTION SUCCESSFUL")
 else:
     print("DECRYPTION ERROR")
