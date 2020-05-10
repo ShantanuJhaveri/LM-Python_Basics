@@ -8,17 +8,15 @@ numFilledSeats = 0
 initialize = 1
 # for i in range(1, TOTAL_SEATS + 1):
 #     seatList.append("Seat Number " + str(i))
-
-print(seatList)
 initialize = 1
-
+print("WELCOME TO THE AIRLINE SECURE PLATFORM\n\n")
 while initialize == 1:
-    program = int(input('\n\n1: ASSIGN SEAT\n'
+    program = int(input('\nCHOOSE A TOOL:\n1: ASSIGN SEAT\n'
                         '2: PRINT SEAT MAP\n'
                         '3: PRINT BOARDING PASS\n'
                         '-1: QUIT\n'))
     if program == 1:
-        print("\n\nASSIGN SEAT\n")
+        print("\nASSIGN SEAT\n")
         if numFilledSeats < 10:
             name = input("ENTER NAME:").lower()
             if name in nameList:
@@ -27,8 +25,7 @@ while initialize == 1:
                 nameList.append(name)
                 numFilledSeats += 1
                 seatList.append(str(name + str(numFilledSeats)))
-                print(seatList)
-                print(nameList)
+                print(str(name)+ " ENTERED IN SEAT NUMBER: " + str(numFilledSeats))
         elif numFilledSeats <= 10:
             print("FLIGHT IS FULL. NEXT FLIGHT LEAVES IN 3 HOURS")
 
@@ -50,7 +47,7 @@ while initialize == 1:
     elif program == 3:
         print("\n\nPRINT BOARDING PASS\n\n")
 
-        type = int(input("Type '1' to get Boarding Pass by seat number.\nType '2' to get Boarding Pass by name"))
+        type = int(input("Type '1' to get Boarding Pass by seat number.\nType '2' to get Boarding Pass by name\n"))
         iT = 0
         if type == 1:
             search = input('ENTER SEAT NUMBER: ')
