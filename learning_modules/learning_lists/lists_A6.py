@@ -1,4 +1,6 @@
 # Goals: Loops, Partially filled lists, Navigating lists by explicit index
+# NO DICTIONARIES
+
 seatList = list('')
 nameList = list('')
 TOTAL_SEATS = 10
@@ -24,8 +26,7 @@ while initialize == 1:
             else:
                 nameList.append(name)
                 numFilledSeats += 1
-                seat = name, numFilledSeats
-                seatList.append(list(seat))
+                seatList.append(str(name + str(numFilledSeats)))
                 print(seatList)
                 print(nameList)
         elif numFilledSeats <= 10:
@@ -37,12 +38,12 @@ while initialize == 1:
     elif program == 2:
         print("\n\nPRINT SEAT MAP\n")
         print("***************************************")
-        for i in range(1,TOTAL_SEATS+1):
+        for i in range(1, TOTAL_SEATS + 1):
             print("Seat Number:  #" + str(i) + "\t\t", end="")
             if i <= numFilledSeats:
-                print(nameList[i-1])
+                print(nameList[i - 1])
             elif i != numFilledSeats:
-                print("")
+                print("EMPTY")
         print("***************************************")
         initialize = 1
 
@@ -52,20 +53,19 @@ while initialize == 1:
         type = int(input("Type '1' to get Boarding Pass by seat number.\nType '2' to get Boarding Pass by name"))
         iT = 0
         if type == 1:
-            while iT == 0:
-                search = input('ENTER SEAT NUMBER: ')
-                if search.isalpha():
-                    iT = 1
-                else:
-                    index = seatList[seat][search]
-                    print(index)
+            search = input('ENTER SEAT NUMBER: ')
+            searchIndex = nameList[int(search) - 1]
+            print("======= BOARDING PASS =======\n"
+                  "\tSeat Number:" + str(search) +
+                  "\n\tPassenger Name: " + str(searchIndex).upper() +
+                  "=============================")
         if type == 2:
-            while iT:
-                search = input('ENTER NAME: ')
-                if search.isdigit():
-                    iT = 1
-                else:
-                    print()
+            search = input('ENTER NAME: ')
+            searchIndex = nameList.index(search)
+            print("======= BOARDING PASS =======\n"
+                  "\tSeat Number:" + str(searchIndex+1) +
+                  "\n\tPassenger Name: " + str(search).upper() +
+                  "=============================")
         initialize = 1
 
     elif program == -1:
